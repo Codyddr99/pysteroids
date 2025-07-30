@@ -48,6 +48,12 @@ def main():
             if player.check_collision(ast):
                 print("Game over!")
                 exit()
+                
+            for shot in shots:
+                if ast.check_collision(shot):
+                    ast.split()
+                    shot.kill()
+                    break
         
         dt = clock.tick(60)/1000
 
