@@ -41,6 +41,10 @@ def main():
         
         updateable.update(dt)
         
+        for ast in asteroids:
+            if player.check_collision(ast):
+                exit()
+        
         dt = clock.tick(60)/1000
 
 if __name__ == "__main__":
